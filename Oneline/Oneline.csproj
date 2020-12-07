@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Impl\ClipBoardContentSource.cs" />
     <Compile Include="Impl\ClipBoardContentWriter.cs" />
     <Compile Include="Impl\NullContentWriter.cs" />
+    <Compile Include="Interface\IContentSource.cs" />
     <Compile Include="Interface\IContentWriter.cs" />
     <Compile Include="Impl\ContentWriterFactory.cs" />
     <Compile Include="Models\ContentWriterType.cs" />

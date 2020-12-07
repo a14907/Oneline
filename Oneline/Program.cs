@@ -16,7 +16,10 @@ namespace Oneline
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormOneline(new ContentWriterFactory(),new OnelineApp(new TransformService())));
+            Application.Run(new FormOneline(contentWriterFactory: new ContentWriterFactory()
+                , app: new OnelineApp(new TransformService())
+                , contentSource: new ClipBoardContentSource()
+                ));
         }
     }
 }
