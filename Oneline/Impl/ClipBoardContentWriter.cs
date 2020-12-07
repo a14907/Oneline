@@ -4,16 +4,20 @@ namespace Oneline
 {
     public class ClipBoardContentWriter : IContentWriter
     {
-        private readonly TextBoxContentWriter _textBoxContentWriter;
+        private readonly IContentWriter _contentWriter;
 
-        public ClipBoardContentWriter(TextBoxContentWriter textBoxContentWriter)
+        public ClipBoardContentWriter(IContentWriter contentWriter)
         {
-            _textBoxContentWriter = textBoxContentWriter;
+            if (contentWriter is ClipBoardContentWriter)
+            {
+                throw new System.ArgumentException("参数类型错误");
+            }
+            _contentWriter = contentWriter;
         }
         public void Write(string content)
         {
             Clipboard.SetText(content);
-            _textBoxContentWriter.Write(content);
+            _contentWriter.Write(content);
         }
     }
 }
