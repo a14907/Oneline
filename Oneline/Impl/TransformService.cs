@@ -20,8 +20,22 @@ namespace Oneline
             {
                 return content;
             }
-            content = content.Replace("\r\n", "\n"); 
-            content = _regexForWordTruncation.Replace(content, ""); 
+            content = content.Replace("\r\n", "\n");
+#if DEBUG
+            if (_regexForWordTruncation.IsMatch(content))
+            {
+
+            }
+#endif
+
+            content = _regexForWordTruncation.Replace(content, "");
+
+#if true
+            if (_regexForWrap.IsMatch(content))
+            {
+
+            }
+#endif
             content = _regexForWrap.Replace(content, " ");
             return content;
         }
