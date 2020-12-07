@@ -44,7 +44,7 @@ namespace Oneline
                 var content = _contentSource.GetContent();
                 if (!string.IsNullOrEmpty(content))
                 {
-                    _app.DoTransform(content);
+                    txtContent.Text = content;
                 }
             }
         }
