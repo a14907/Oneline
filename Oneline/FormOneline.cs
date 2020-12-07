@@ -39,6 +39,7 @@ namespace Oneline
             {
                 _app.DoTransform(txtContent.Text);
                 _textChange = false;
+                lbCount.Text = _app.TransformCount.ToString();
             }
         }
 

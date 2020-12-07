@@ -6,6 +6,8 @@ namespace Oneline
     {
         private IContentWriter _contentWriter = NullContentWriter.Instance;
         private readonly ITransformService _transformService;
+        private int _transformCount = 0;
+
         public OnelineApp(ITransformService transformService)
         {
             _transformService = transformService;
@@ -23,6 +25,8 @@ namespace Oneline
             }
         }
 
+        public int TransformCount { get { return _transformCount; } }
+
         public void DoTransform(string content)
         {
             content = content.Trim();
@@ -33,6 +37,7 @@ namespace Oneline
 
             var result = _transformService.Transform(content);
             _contentWriter.Write(result);
+            _transformCount++;
         }
     }
 }

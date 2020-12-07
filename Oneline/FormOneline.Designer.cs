@@ -36,6 +36,8 @@ namespace Oneline
             this.cbxAuto = new System.Windows.Forms.CheckBox();
             this.cbxCopy = new System.Windows.Forms.CheckBox();
             this._timerForAuto = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtContent
@@ -87,11 +89,31 @@ namespace Oneline
             // 
             this._timerForAuto.Interval = 500;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(453, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "转换次数：";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Location = new System.Drawing.Point(524, 18);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(11, 12);
+            this.lbCount.TabIndex = 4;
+            this.lbCount.Text = "0";
+            // 
             // FormOneline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 331);
+            this.Controls.Add(this.lbCount);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxCopy);
             this.Controls.Add(this.cbxAuto);
             this.Controls.Add(this.btnTransform);
@@ -111,6 +133,8 @@ namespace Oneline
         private System.Windows.Forms.CheckBox cbxAuto;
         private System.Windows.Forms.CheckBox cbxCopy;
         private System.Windows.Forms.Timer _timerForAuto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCount;
     }
 }
 
