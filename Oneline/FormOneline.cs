@@ -66,7 +66,7 @@ namespace Oneline
 
         private void cbxAuto_CheckedChanged(object sender, EventArgs e)
         {
-            _timerForAuto.Enabled = true;
+            _timerForAuto.Enabled = cbxAuto.Checked;
             txtContent.Enabled = !cbxAuto.Checked;
         }
 
