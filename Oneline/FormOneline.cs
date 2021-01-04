@@ -72,7 +72,14 @@ namespace Oneline
 
         private void cbxCopy_CheckedChanged(object sender, EventArgs e)
         {
-            _app.ContentWriter = _clipBoardContentWriter;
+            if (cbxCopy.Checked)
+            {
+                _app.ContentWriter = _clipBoardContentWriter;
+            }
+            else
+            {
+                _app.ContentWriter = _textBoxContentWriter;
+            }
         }
 
         private void txtContent_TextChanged(object sender, EventArgs e)
